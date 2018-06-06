@@ -83,3 +83,13 @@ echo PHP_EOL.'CAR opel'.PHP_EOL;
 foreach ($opel as $value) {
     echo $value.' ';
 }
+//task6
+for ($a=1; $a<=10; $a++) {
+    for ($b=1; $b<=10; $b++) {
+        if ($a%2==0 && $b%2==0) {
+            echo '('.$a.'*'.$b.'='.$a*$b.')'.' ';
+        }
+        echo $a.'*'.$b.'='.$a*$b.' ';
+    }
+    echo PHP_EOL;
+}
