@@ -19,14 +19,40 @@ const PENCIL_PIC=40;
 echo 'Всего рисунков '.TOTAL_PIC.'.'.' выполнены фломастерами '.MARKER_PIC.'.'.' выполнены карандашами '
     .PENCIL_PIC.'.';
 echo ' Вычтем из общего кол-ва рисунков сумму рисунков каранадашами и фломастерами,ответ: рисунков красками '
-    .(TOTAL_PIC-(MARKER_PIC+PENCIL_PIC));
+    .(TOTAL_PIC-(MARKER_PIC+PENCIL_PIC).PHP_EOL);
 
 //task3
-$age=67;
-if (18<$age and $age<65) {
-    echo "Вам еще работать и работать";
+$age=35;
+if (18<=$age && $age<=65) {
+    echo "Вам еще работать и работать".PHP_EOL;
+} elseif ($age > 65) {
+    echo "Вам пора на пенсию".PHP_EOL;
+} elseif ($age>=1 && $age<=17) {
+    echo "Вам еще рано работать".PHP_EOL;
+} else {
+    echo "неизвестный возраст".PHP_EOL;
 }
-else if ($test < 91 && $test > 80)
-{
-    echo "Оценка 4";
+
+//task4
+$day=3;
+switch ($day) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        echo "Это рабочий день";
+        break;
+    case 6:
+    case 7:
+        echo "Это выходной день";
+        break;
+    default:
+        echo "Неизвестный день";
 }
+
+//task5
+$array = [
+    "foo" => "bar",
+    "bar" => "foo",
+];
