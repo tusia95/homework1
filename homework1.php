@@ -41,18 +41,45 @@ switch ($day) {
     case 3:
     case 4:
     case 5:
-        echo "Это рабочий день";
+        echo "Это рабочий день".PHP_EOL;
         break;
     case 6:
     case 7:
-        echo "Это выходной день";
+        echo "Это выходной день".PHP_EOL;
         break;
     default:
-        echo "Неизвестный день";
+        echo "Неизвестный день".PHP_EOL;
 }
 
 //task5
-$array = [
-    "foo" => "bar",
-    "bar" => "foo",
+$bmw = [
+    "model" => "X5",
+    "speed" => 120,
+    "doors" => 5,
+    "year" => "2015",
 ];
+$opel = [
+    "model" => "Corsa",
+    "speed" => 125,
+    "doors" => 5,
+    "year" => "2011",
+];
+$toyota = [
+    "model" => "Corolla",
+    "speed" => 100,
+    "doors" => 3,
+    "year" => "2001",
+];
+$cars= [$bmw,$opel,$toyota];
+echo 'CAR toyota'.PHP_EOL;
+foreach ($toyota as $value) {
+    echo $value.' ';
+}
+echo PHP_EOL.'CAR bmw'.PHP_EOL;
+foreach ($bmw as $value) {
+    echo $value.' ';
+}
+echo PHP_EOL.'CAR opel'.PHP_EOL;
+foreach ($opel as $value) {
+    echo $value.' ';
+}
