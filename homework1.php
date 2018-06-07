@@ -1,4 +1,4 @@
-<?php
+0<?php
 /**
  * Created by PhpStorm.
  * User: Роман Бурмистров
@@ -84,19 +84,19 @@ foreach ($opel as $value) {
     echo $value.' ';
 }
 //task6
-echo '<table>';
+echo '<table border="2px">';
 for ($a=1; $a<=10; $a++) {
     echo '<tr>';
     for ($b=1; $b<=10; $b++) {
         echo '<td>';
         if ($a % 2 == 0 && $b % 2 == 0) {
-            echo '('.$a * $b . ')' . ' ';
+            echo '('.$a * $b . ')' ;
         } elseif ($a % 2 == 1 && $b % 2 == 1) {
-            echo '[' . $a * $b . ']' . ' ';
+            echo '[' . $a * $b . ']';
         } else {
-            echo $a * $b . ' ';
+            echo $a * $b ;
         }
-        echo '</td>';
+        echo '</td>'. ' ';
     }
 
     echo '</td>'. PHP_EOL;
