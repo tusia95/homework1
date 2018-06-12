@@ -99,7 +99,7 @@ for ($a=1; $a<=10; $a++) {
         echo '</td>'. ' ';
     }
 
-    echo '</td>'. PHP_EOL;
+    echo '</tr>'. PHP_EOL;
 
 }
 echo '</table>';

@@ -91,7 +91,31 @@ function toCalculate($arithmetic_sign, $num1 = 0, $num2 = 0)
                 }
             }
             echo '=';
-            echo $multipl;
+            echo $multipl.PHP_EOL;
             break;
     }
 }
+
+//task3
+function task3($num1, $num2)
+{
+    $args = func_get_args();
+    if (count($args)==2) {
+        echo '<table border="2px">';
+
+        for ($a=1; $a<=$num1; $a++) {
+            echo '<tr>';
+            for ($b=1; $b<=$num2; $b++) {
+                echo '<td>';
+                echo $a*$b;
+                echo '</td>';
+            }
+            echo "</tr>";
+        }
+    } else {
+        echo 'неверное количество параметров, введите 2';
+    }
+}
+
+//task4
+

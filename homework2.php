@@ -9,3 +9,4 @@
 require('homework2_functions.php');
 toCalculate('*', 2, 3, 4, 5, 6, 7);
 //task3
+task3(5, 2, 6);
