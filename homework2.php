@@ -16,8 +16,8 @@ function printString($strarr, $tojoinstr = false)
         foreach ($strarr as $value) {
             $array_string=$array_string.$value;
         }
-        return $array_string;
     }
+    return $array_string;
 }
 
 
@@ -32,54 +32,47 @@ echo PHP_EOL.printString($somearray, false);
 function toCalculate($arithmetic_sign, $num1 = 0, $num2 = 0)
 {
     $args = func_get_args();
-    $number_elements=count($args);
-    echo $number_elements;
-    $num_args = [0];
-    foreach ($num_args as $i => $value) {
-        while ($i<$number_elements-1) {
-            $num_args[$i] = $args[$i + 1];
-            echo $num_args[$i];
-        }
-    }
-    foreach ($num_args as $i => $value) {
-        echo $num_args[$i]."hi";
-    }
-    echo end($num_args).'bu';
-
     switch ($arithmetic_sign) {
         case ('-'):
-            $sum = 0;
-            foreach ($num_args as $i => $value) {
-                $sum = $sum + $num_args[$i + 1];
-            }
-           // echo $num_args[0];
-            foreach ($num_args as $i => $value) {
-                if ($num_args[$i] != $num_args[0]) {
-                    echo '-';
+            $minus = $args[1];
+            foreach ($args as $i => $value) {
+                if ($i != 0) {
+                    $minus = $minus - $args[$i + 1];
+                    if ($i != 1) {
+                        echo "-";
+                    }
+                    echo $args[$i];
                 }
-                echo $num_args[$i];
             }
             echo '=';
-            echo $num_args[0] - $sum;
+            echo $minus;
             break;
-
         case ('/'):
-            $result = $num_args[0];
+            $divide = $args[1];
             foreach ($args as $i => $value) {
-                while ($num_args[$i + 1] != 0) {
-                    $result = $result / $args[$i + 1];
+                if ($i != 0) {
+                    if ($i < count($args) - 1) {
+                        $divide = $divide / $args[$i + 1];
+                        // echo $args[$i+1];
+                    }
+
+
+                    // echo $args[$i+1];
+                    if ($i != 1) {
+                        echo "/";
+                    }
+                    echo $args[$i];
                 }
             }
-            echo $num_args[0];
-            foreach ($num_args as $i => $value) {
-                if ($num_args[$i] != end($args)) {
-                    echo '/';
-                }
-                echo '=';
-                echo $result;
-                break;
-            }
+            echo '=';
+            echo $divide;
+            break;
     }
 }
 
-toCalculate('-', 2, 3, 4, 5);
+
+
+
+
+toCalculate('/', 2, 3, 4, 5);
+//task3
