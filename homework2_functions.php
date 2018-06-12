@@ -112,10 +112,17 @@ function task3($num1, $num2)
             }
             echo "</tr>";
         }
+        echo '</table>';
     } else {
-        echo 'неверное количество параметров, введите 2';
+        echo 'неверное количество параметров, введите 2'.PHP_EOL;
     }
 }
 
-//task4
+//task 6.2
+function task6($fname)
+{
+    fopen($fname, "r");
+    $content = file_get_contents($fname);
+    echo $content;
+}
 
