@@ -7,7 +7,18 @@
  */
 
 require('homework2_functions.php');
-toCalculate('+', 7, 8, 25, -1, 0);
+//task1
+
+
+$newarray=array('one','two','three');
+echo PHP_EOL.printString($newarray, true);
+
+$somearray=array('cat','dog','frog');
+echo PHP_EOL;
+printString($somearray, false);
+echo  PHP_EOL;
+//task2
+toCalculate('/', 7, 8, 0 , -1, 0);
 //task 3.1
 task3(8, 4);
 

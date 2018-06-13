@@ -16,17 +16,10 @@ function printString($strarr, $tojoinstr = false)
         foreach ($strarr as $value) {
             $array_string=$array_string.$value;
         }
+        return $array_string;
     }
-    return $array_string;
+
 }
-
-
-$newarray=array('one','two','three');
-echo PHP_EOL.printString($newarray, true);
-
-$somearray=array('cat','dog','frog');
-echo PHP_EOL.printString($somearray, false);
-
 //task2
 
 function toCalculate($arithmetic_sign, $num1 = 0, $num2 = 0)
@@ -49,6 +42,7 @@ function toCalculate($arithmetic_sign, $num1 = 0, $num2 = 0)
             break;
         case ('/'):
             $divide = $args[1];
+            $zeroparametr=false;
             foreach ($args as $i => $value) {
                 if ($i != 0) {
                     if ($i < count($args) - 1) {
@@ -58,10 +52,17 @@ function toCalculate($arithmetic_sign, $num1 = 0, $num2 = 0)
                         echo "/";
                     }
                     echo $args[$i];
+                } elseif ($i==0) {
+                    echo 'Параметр 0, на ноль делить нельзя'.PHP_EOL;
+                    $zeroparametr=true;
+
+                    break;
                 }
             }
-            echo '=';
-            echo $divide;
+            if (!$zeroparametr) {
+                echo '=';
+                echo $divide;
+            }
             break;
         case ('+'):
             $plus = $args[1];
