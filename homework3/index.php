@@ -48,5 +48,8 @@ echo evenNumbersFromCsv("numbers.csv");
 $url= 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json';
 $json_file = file_get_contents($url);
 $json_arr=json_decode($json_file, true);
-var_dump( $json_arr);
+//var_dump( $json_arr);
+//внизу неверно должно быть получение значения без знания ключей и структуры многомерного массива
+echo $json_arr["query"]["pages"][15580374]["pageid"];
+echo $json_arr["query"]["pages"][15580374]["title"];
 ?>;
