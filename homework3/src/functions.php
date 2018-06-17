@@ -24,6 +24,22 @@ function writeNewJson ($newarray,$fname,$newfname){
     $fp=fopen($newfname,"w");
     fwrite($fp, $content_json);
 }
+
+function compareJsonFiles($fname,$newfname) {
+    fopen($fname, "r");
+    $content = file_get_contents($fname);
+    $content_arr=json_decode($content);
+    fopen($newfname, "r");
+    $content_new = file_get_contents($newfname);
+    $new_content_arr=json_decode($content_new);
+    var_dump($new_content_arr);
+    $differ_arr=array();
+    for ($i=0;$i<count($new_content_arr);$i++)
+    {
+        $differ_arr[]=array_diff($new_content_arr[$i],$content_arr[$i]);
+    }
+    var_dump($differ_arr);
+}
 //-------------------------------task 3------------------------
 function evenNumbersFromCsv($fname) {
     $random_arr=array();
