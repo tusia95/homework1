@@ -14,7 +14,7 @@
  */
 require('src/functions.php');
 //task1
-/*$xmlstr = simplexml_load_file('data.xml');
+$xmlstr = simplexml_load_file('data.xml');
 echo "PurchaseNumber: ". $xmlstr["PurchaseOrderNumber"].'.'.' OrderDate: '.$xmlstr["OrderDate"].PHP_EOL;
 $n=1;
 foreach ($xmlstr->Address as $address)
@@ -30,11 +30,8 @@ foreach ($xmlstr->Items->Item as $item)
     echo "Order: ".$n." Part Number: ".$item["PartNumber"].PHP_EOL;
     echo 'Product name: '.$item->ProductName.'. Quantity: '.$item->Quantity.'. US Price: '.$item->USPrice.'. Comment: '.$item->Comment.'. Ship Date: '.$item->ShipDate.PHP_EOL;
     $n++;
-}*/
+}
 
-
-
-//в цикле адреса
 
 //-----------------------task 2--------------------
 
@@ -43,17 +40,18 @@ $dogs = array('wolf','jackal','fox');
 $animals=array($cats,$dogs);
 writeJsonFile($animals,"output.json");
 $need_change=rand(0,1);
-$insects=array('ant','butterfly','caterpillar');
+$newdogs=array('wolf','jackal');
+//$need_change
 if ($need_change) {
-    writeNewJson($insects, 'output.json', 'output2.json');
+    writeNewJson($newdogs, 'output.json', 'output2.json');
 }
 else {
     writeJsonFile($animals,"output2.json");
     }
-    compareJsonFiles("output2.json","output.json");
+    compareJsonFiles("output.json","output2.json");
 
 //---------------------------------task 3--------------------------------
-/*echo evenNumbersFromCsv("numbers.csv");
+echo evenNumbersFromCsv("numbers.csv").PHP_EOL;
 
 //--------------------------------task 4--------------------------------
 $url= 'https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json';
@@ -61,6 +59,6 @@ $json_file = file_get_contents($url);
 $json_arr=json_decode($json_file, true);
 //var_dump( $json_arr);
 //внизу неверно должно быть получение значения без знания ключей и структуры многомерного массива
-echo $json_arr["query"]["pages"][15580374]["pageid"];
-echo $json_arr["query"]["pages"][15580374]["title"];*/
+echo "page id= ". $json_arr["query"]["pages"][15580374]["pageid"].PHP_EOL;
+echo "title= ".$json_arr["query"]["pages"][15580374]["title"];
 ?>;

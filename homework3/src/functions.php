@@ -18,7 +18,7 @@ function writeNewJson ($newarray,$fname,$newfname){
     fopen($fname, "r");
     $content = file_get_contents($fname);
     $content_arr=json_decode($content);
-    $content_arr[]=$newarray;
+    $content_arr[1]=$newarray;
     $content_json=json_encode($content_arr);
     // echo $new_animal_json;
     $fp=fopen($newfname,"w");
@@ -29,15 +29,18 @@ function compareJsonFiles($fname,$newfname) {
     fopen($fname, "r");
     $content = file_get_contents($fname);
     $content_arr=json_decode($content);
+    //var_dump($content_arr);
     fopen($newfname, "r");
     $content_new = file_get_contents($newfname);
     $new_content_arr=json_decode($content_new);
-    var_dump($new_content_arr);
-    $differ_arr=array();
+  //  var_dump($new_content_arr);
+    //$dif_arr=array_diff($new_content_arr,$content_arr);
     for ($i=0;$i<count($new_content_arr);$i++)
     {
-        $differ_arr[]=array_diff($new_content_arr[$i],$content_arr[$i]);
+        $differ_arr=array_diff($content_arr[$i],$new_content_arr[$i]);
+
     }
+    echo "first array contains unique elements: ";
     var_dump($differ_arr);
 }
 //-------------------------------task 3------------------------
