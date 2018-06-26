@@ -15,20 +15,20 @@
 require('src/functions.php');
 //task1
 $xmlstr = simplexml_load_file('data.xml');
-echo "PurchaseNumber: ". $xmlstr["PurchaseOrderNumber"].'.'.' OrderDate: '.$xmlstr["OrderDate"].PHP_EOL;
+echo "<p> <strong>PurchaseNumber:</strong> ". $xmlstr["PurchaseOrderNumber"].'.'.' <strong>OrderDate:</strong>'.$xmlstr["OrderDate"]."</p>";
 $n=1;
 foreach ($xmlstr->Address as $address)
 {
-    echo "Order: ".$n." Address type: ".$address["Type"].PHP_EOL;
-    echo "Name:". $address->Name.'. Street: '.$address->Street.'. City: '.$address->City.'. State: '.$address->State.'.'. ' Zip: '.$address->Zip.'.  Country: '.$address->Country.PHP_EOL;
+    echo "<p><strong>Order:</strong> ".$n."<strong> Address type:</strong> ".$address["Type"]."</p>";
+    echo "<p><strong>Name:</strong>". $address->Name.'. <strong>Street:</strong> '.$address->Street.'. <strong>City:</strong> '.$address->City.'. <strong>State:</strong>'.$address->State.'.'.'<strong>Zip:</strong>'.$address->Zip.'. <strong>Country:</strong>'.$address->Country.'</p>';
     $n++;
 }
 $n=1;
-echo 'Delivery notes: '.$xmlstr->DeliveryNotes.PHP_EOL;
+echo '<p><strong>Delivery notes:</strong>'.$xmlstr->DeliveryNotes.'</p>' ;
 foreach ($xmlstr->Items->Item as $item)
 {
-    echo "Order: ".$n." Part Number: ".$item["PartNumber"].PHP_EOL;
-    echo 'Product name: '.$item->ProductName.'. Quantity: '.$item->Quantity.'. US Price: '.$item->USPrice.'. Comment: '.$item->Comment.'. Ship Date: '.$item->ShipDate.PHP_EOL;
+    echo " <p><strong>Order:</strong> ".$n."<strong> Part Number:</strong> ".$item["PartNumber"]. '</p>';
+    echo ' <p><strong>Product name:</strong> '.$item->ProductName.'.<strong>Quantity:</strong>'.$item->Quantity.'.<strong>US Price:</strong> '.$item->USPrice.'.<strong>Comment:</strong> '.$item->Comment.'.<strong>Ship Date:</strong>'.$item->ShipDate.'</p>';
     $n++;
 }
 
